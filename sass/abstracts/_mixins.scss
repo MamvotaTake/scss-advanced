@@ -5,3 +5,16 @@
         clear: both;
     }
 }
+
+@mixin backgroundImg($url) {
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url($url);
+    background-size: cover;
+    background-position: top;
+}
+
+@mixin backgroundGradient($color1, $color2 ) {
+    background-image: linear-gradient(to right bottom, $color1, $color2);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+}
