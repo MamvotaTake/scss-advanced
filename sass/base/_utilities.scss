@@ -1,3 +1,7 @@
+@use 'sass:string';
+@import "../abstracts/variables";
+
+
 .u-center-text{
     text-align: center !important;
 }
@@ -20,4 +24,102 @@
 
 .u-margin-top-huge{
     margin-bottom: 10rem !important;
+}
+
+@each $space in $tiny_spaces {
+    .space-y-#{escape-number($space)} {
+        & > * + * {
+            margin-top: #{$space * 0.25}rem;
+        }
+    }
+
+    .space-x-#{escape-number($space)} {
+        & > * + * {
+            margin-left: #{$space * 0.25}rem;
+        }
+    }
+
+    .gap-#{escape-number($space)} {
+        gap: #{$space * 0.25}rem;
+    }
+
+    .gap-x-#{escape-number($space)} {
+        column-gap: #{$space * 0.25}rem;
+    }
+
+    .gap-y-#{escape-number($space)} {
+        row-gap: #{$space * 0.25}rem;
+    }
+
+    .m-#{escape-number($space)} {
+        margin: #{$space * 0.25}rem;
+    }
+
+    .-m-#{escape-number($space)} {
+        margin: #{-$space * 0.25}rem;
+    }
+
+    .mx-#{escape-number($space)} {
+        margin-right: #{$space * 0.25}rem;
+        margin-left: #{$space * 0.25}rem;
+    }
+
+    .-mx-#{escape-number($space)} {
+        margin-right: #{-$space * 0.25}rem;
+        margin-left: #{-$space * 0.25}rem;
+    }
+
+    .my-#{escape-number($space)} {
+        margin-top: #{$space * 0.25}rem;
+        margin-bottom: #{$space * 0.25}rem;
+    }
+
+    .-my-#{escape-number($space)} {
+        margin-top: #{-$space * 0.25}rem;
+        margin-bottom: #{-$space * 0.25}rem;
+    }
+
+    .px-#{escape-number($space)} {
+        padding-right: #{$space * 0.25}rem;
+        padding-left: #{$space * 0.25}rem;
+    }
+
+    .py-#{escape-number($space)} {
+        padding-top: #{$space * 0.25}rem;
+        padding-bottom: #{$space * 0.25}rem;
+    }
+
+    .p-#{escape-number($space)} {
+        padding: #{$space * 0.25}rem;
+    }
+
+    .inset-#{escape-number($space)} {
+        inset: #{$space * 0.25}rem #{$space * 0.25}rem #{$space * 0.25}rem #{$space * 0.25}rem;
+    }
+
+    .inset-x-#{escape-number($space)} {
+        right: #{$space * 0.25}rem;
+        left: #{$space * 0.25}rem;
+    }
+
+    .inset-y-#{escape-number($space)} {
+        top: #{$space * 0.25}rem;
+        bottom: #{$space * 0.25}rem;
+    }
+    .top-#{escape-number($space)} {
+        top: #{$space * 0.25}rem;
+    }
+
+    .bottom-#{escape-number($space)} {
+        bottom: #{$space * 0.25}rem;
+    }
+
+    .right-#{escape-number($space)} {
+        right: #{$space * 0.25}rem;
+    }
+
+    .left-#{escape-number($space)} {
+        left: #{$space * 0.25}rem;
+    }
+
 }
