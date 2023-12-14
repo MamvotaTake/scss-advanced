@@ -8,15 +8,19 @@
   transition: transform .3s;
   cursor: pointer;
 
+  @include respond(tab-port){
+    padding: 2rem;
+  }
+
 
   &__icon{
     font-size: 6rem;
     margin-bottom: .5rem;
     @include backgroundGradient($color-primary-light, $color-primary-dark);
-  }
 
-  &__text{
-
+    @include respond(tab-port){
+      margin-bottom: .5rem;
+    }
   }
 
   &:hover {
